@@ -1,0 +1,129 @@
+/* Page Layout */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  width: 100%;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+}
+
+.app {
+  /* border: 3px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Card */
+.card {
+  width: 90%;          /* allow card to grow based on viewport */
+  max-width: 600px;    /* allow card to expand more on larger screens */
+  padding: 25px;
+  border-radius: 20px;
+  /* make the card occupy most of the screen vertically */
+  min-height: 50vh;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  text-align: center;
+  color: white;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+/* Avatar */
+.avatar {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+/* Gradient Name */
+.card h2 {
+  margin: 10px 0 5px;
+  background: linear-gradient(90deg, #06b6d4, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Title */
+.card h4 {
+  margin: 0;
+  color: #ddd;
+  font-weight: normal;
+}
+
+/* Bio */
+.card p {
+  font-size: 14px;
+  margin: 15px 0;
+  color: #eee;
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #4f46e5, #ec4899);
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 98%;   /* almost full width on small screens */
+    padding: 18px;
+    border-radius: 15px;
+    /* let height adjust naturally on phones */
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .avatar {
+    width: 100px;
+    height: 100px;
+  }
+
+  .card h2 {
+    font-size: 20px;
+  }
+
+  .card h4 {
+    font-size: 14px;
+  }
+
+  .card p {
+    font-size: 13px;
+  }
+
+  .btn {
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+}
